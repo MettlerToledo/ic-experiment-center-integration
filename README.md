@@ -3,21 +3,13 @@
 
 Reference: [`Markdown Badges`](https://github.com/Ileriayo/markdown-badges)
 
-_A short description of the repo — should match the GitHub Description field._
-
-Official [connector / interfaces / integration] for Mettler Toledo products, maintained by Mettler Toledo.
+Provides schemas and .NET code for interacting with iC Experiment Center.
 
 ## Introduction
 
-Executive summary of the project: what it does, who it's for, and how it fits into the iC Experiment Center ecosystem.
+iC Experiment Center allows users to carry out experiments in the laboratory.  It integrates with instruments and Mettler Toledo instrument software and has a public API to enable customer integrations with other systems like Electronic Lab Notebooks. This project has the schemas for using the public API of experiment center and .NET clients for accessing the public API of iC Experiment Center. It also has an adapter project that mimics [iC Data Centers](https://www.mt.com/us/en/home/products/L1_AutochemProducts/automated-reactor-in-situ-analysis-software/ic-data-center.html) file based integration pattern with iC Experiment Center. This adapter can be used by users of iC Experiment Center to replicate the iC Data Center workflow and also provides an example of using the iC Experiment Center public API.
 
 ## Related projects
-
-If there are other related project repositories that pair with this component, link them here and explain why they're related — enough context that a user understands the relationship without having to open both repos first.
-
-- [`lynx-open-connector`](link)
-- [`lynx-open-interfaces`](link)
-- [`lynx-open-integration`](link)
 
 ## Documentation and examples
 
@@ -41,4 +33,4 @@ To report a security vulnerability, do not open a public issue — see [SECURITY
 
 ## License
 
-Licensed under [License Name] — see [LICENSE](link) for details.
+Licensed under [MIT] — see [LICENSE](link) for details.
