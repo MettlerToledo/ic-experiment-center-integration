@@ -1,0 +1,20 @@
+﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+
+namespace AutoChem.Lab.S88Definitions.Operations;
+
+/// <summary>
+/// Defines the reponses for when a charge operation is ended by reaching the maximum amount 
+/// when controlled by an expression that determines the amount to be charged or the rate to charge at.
+/// </summary>
+public enum ChargeEndedByMaxAmountResponseJson
+{
+    /// <summary>
+    /// Continue the procedure.
+    /// </summary>
+    ContinueProcedure = 0,
+
+    /// <summary>
+    /// Pause the procedure.
+    /// </summary>
+    PauseProcedure = 1,
+}

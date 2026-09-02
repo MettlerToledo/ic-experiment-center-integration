@@ -1,0 +1,19 @@
+﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+
+namespace AutoChem.Lab.S88Definitions.Operations;
+
+/// <summary>
+/// Parameters for controlling the target value by expression.
+/// </summary>
+public class ControlFinalControlElementByExpressionParametersJson : ControlFinalControlElementParametersJson
+{
+    /// <summary>
+    /// The expression that will be evaluated periodically during the FCE control operation to determine the target value.
+    /// </summary>
+    public string? ControlExpression { get; set; }
+
+    /// <summary>
+    /// When the expression evaluates to true, the FCE control operation will end.
+    /// </summary>
+    public string? EndConditionExpression { get; set; }
+}
