@@ -19,8 +19,4 @@
     <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Clients\MettlerToledo.Labs.Experiments.Clients.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Using Include="Xunit" />
-  </ItemGroup>
-
 </Project>

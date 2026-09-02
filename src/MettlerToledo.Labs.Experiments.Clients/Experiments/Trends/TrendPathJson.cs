@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AutoChem.Lab.S88Definitions.Trends;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 /// <summary>
 /// Identifies a trend in the experiment

@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// A base type for entities that a trackable.

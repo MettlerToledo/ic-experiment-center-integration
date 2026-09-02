@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Trends;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 /// <summary>
 /// A converter for <see cref="TrendJson"/> that skip reading the trend values.

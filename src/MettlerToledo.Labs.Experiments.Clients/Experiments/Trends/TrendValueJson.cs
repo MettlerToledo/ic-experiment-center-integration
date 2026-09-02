@@ -3,7 +3,7 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Trends;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 /// <summary>
 /// A value in a trend.

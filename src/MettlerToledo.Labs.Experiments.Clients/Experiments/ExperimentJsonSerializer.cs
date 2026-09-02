@@ -8,10 +8,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using System.Threading.Tasks;
-using AutoChem.Lab.S88Definitions.Equipments;
-using AutoChem.Lab.S88Definitions.Trends;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// A class to help with serializing the <see cref="ExperimentJson"/> and trend values.

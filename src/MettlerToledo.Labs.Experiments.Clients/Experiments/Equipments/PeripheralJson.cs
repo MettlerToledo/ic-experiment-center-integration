@@ -1,9 +1,9 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
 using System.Collections.Generic;
-using AutoChem.Lab.S88Definitions.Materials;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// Identifies and describes a peripheral used in an experiment.

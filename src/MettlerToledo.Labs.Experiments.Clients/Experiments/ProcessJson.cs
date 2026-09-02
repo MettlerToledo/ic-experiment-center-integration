@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// The process for an experiment.

@@ -1,8 +1,8 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Units;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Units;
 
-namespace AutoChem.Lab.S88Definitions.Parameters;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
 
 /// <summary>
 /// Defines the properties of a unit value parameter so that see <see cref="DynamicUnitValueParameterJson"/> and

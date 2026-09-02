@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// Provides information about the receptacle configuration.

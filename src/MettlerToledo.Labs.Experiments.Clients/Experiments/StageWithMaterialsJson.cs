@@ -2,9 +2,9 @@
 
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using AutoChem.Lab.S88Definitions.Materials;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// A stage of an experiment linked with the experiment materials

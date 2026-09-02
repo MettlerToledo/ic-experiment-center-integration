@@ -1,6 +1,6 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// The types of inserts.

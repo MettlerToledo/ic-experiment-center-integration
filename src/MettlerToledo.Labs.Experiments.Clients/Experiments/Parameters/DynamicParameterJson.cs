@@ -1,9 +1,9 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
 using System.Text.Json.Serialization;
-using AutoChem.Lab.S88Definitions.Operations;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
-namespace AutoChem.Lab.S88Definitions.Parameters;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
 
 /// <summary>
 /// Defines a dynamic parameter use in a <see cref="DynamicOperationJson"/>. The specific parameters will be defined by the user and are not known by the system.

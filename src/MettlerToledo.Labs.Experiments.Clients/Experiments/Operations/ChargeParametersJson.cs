@@ -2,7 +2,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// The parameters for a charge operation.

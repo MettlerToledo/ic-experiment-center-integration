@@ -1,6 +1,6 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// The s88 stage types.

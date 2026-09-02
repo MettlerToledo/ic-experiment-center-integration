@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// A reference to a piece of equipment

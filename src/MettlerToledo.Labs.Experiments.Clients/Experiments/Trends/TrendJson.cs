@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AutoChem.Lab.S88Definitions.Trends;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 /// <summary>
 /// A trend.

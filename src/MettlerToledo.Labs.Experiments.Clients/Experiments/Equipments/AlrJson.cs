@@ -2,7 +2,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// Information about an Alr

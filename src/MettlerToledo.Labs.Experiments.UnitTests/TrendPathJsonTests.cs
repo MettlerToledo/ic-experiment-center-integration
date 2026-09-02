@@ -1,8 +1,8 @@
-using AutoChem.Lab.S88Definitions.Trends;
+﻿using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 using Shouldly;
 using Xunit;
 
-namespace AutoChem.Lab.S88Definitions.UnitTests;
+namespace MettlerToledo.Labs.Experiments.UnitTests;
 
 public class TrendPathJsonTests
 {

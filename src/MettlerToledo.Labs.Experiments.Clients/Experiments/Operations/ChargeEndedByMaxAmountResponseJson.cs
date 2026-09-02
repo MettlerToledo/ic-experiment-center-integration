@@ -1,6 +1,6 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// Defines the reponses for when a charge operation is ended by reaching the maximum amount 

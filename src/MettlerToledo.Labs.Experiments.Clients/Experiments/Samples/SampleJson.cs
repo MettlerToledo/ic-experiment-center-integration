@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AutoChem.Lab.S88Definitions.Samples;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Samples;
 
 /// <summary>
 /// Information about a sample

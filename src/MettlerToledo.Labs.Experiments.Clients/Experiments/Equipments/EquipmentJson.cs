@@ -1,8 +1,9 @@
 ﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
 using System.Text.Json.Serialization;
+using MettlerToledo.Labs.Experiments.Clients.Experiments;
 
-namespace AutoChem.Lab.S88Definitions.Equipments;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 
 /// <summary>
 /// Information about equipment used
