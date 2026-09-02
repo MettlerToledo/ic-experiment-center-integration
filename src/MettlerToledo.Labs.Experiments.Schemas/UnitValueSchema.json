@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/unitValue",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "significantDigits": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [ "value", "unit" ],
+  "additionalProperties": false,
+
+  "definitions": {
+    "rotationalFrequency": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "min-1", "min⁻¹", "s-1", "s⁻¹" ]
+        }
+      }
+    },
+    "temperature": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "C", "°C" ]
+        }
+      }
+    },
+    "temperatureRate": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "K/min", "K/s", "°C/min" ]
+        }
+      }
+    },
+    "temperatureDiff": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "K" ]
+        }
+      }
+    },
+    "time": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "s", "min", "h" ]
+        }
+      }
+    },
+    "density": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "mg/mL", "g/mL", "kg/L", "g/L" ]
+        }
+      }
+    },
+    "chemicalAmount": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "μg", "mg", "g", "kg", "μL", "mL", "L" ]
+        }
+      }
+    },
+    "chemicalAmountRate": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "μg/min", "mg/min", "g/min", "kg/min", "μL/min", "mL/min", "L/min" ]
+        }
+      }
+    },
+    "ph": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "pH" ]
+        }
+      }
+    },
+    "phRate": {
+      "$ref": "#",
+      "properties": {
+        "unit": {
+          "type": "string",
+          "enum": [ "pH/min" ]
+        }
+      }
+    }
+  }
+}

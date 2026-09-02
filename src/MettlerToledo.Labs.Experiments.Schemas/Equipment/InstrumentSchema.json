@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/instrument",
+  "title": "Defines the data for controlled instrument used in an experiment",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/equipment/equipmentInstance",
+
+  "properties": {
+    "softwareVersion": {
+      "type": "string"
+    },
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/equipment/alrInstrumentZone" }
+        ]
+      }
+    }
+  },
+
+  "required": [ "zones" ]
+}

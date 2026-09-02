@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/temperatureControlOperation",
+  "title": "Defines the data for a temperature control operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "TemperatureControlOperation"
+    },
+    "parameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/rampByDurationParameters" },
+        { "$ref": "#/definitions/rampByRateParameters" },
+        { "$ref": "#/definitions/nonLinearParameters" },
+        { "$ref": "#/definitions/deltaJacketReactorParameters" },
+        { "$ref": "#/definitions/temperatureControlParametersByExpression" },
+        { "$ref": "#/definitions/temperatureControlParametersOff" }
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "definitions": {
+    "rampByDurationParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersRampByDuration"
+        },
+        "temperatureControlMode": { "$ref": "#/definitions/temperatureModes" },
+        "temperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        },
+        "endValueMargin": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureDiff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rampByRateParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersRampByRate"
+        },
+        "temperatureControlMode": { "$ref": "#/definitions/temperatureModes" },
+        "temperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "rate": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureRate"
+        },
+        "endValueMargin": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureDiff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "nonLinearParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersNonLinear"
+        },
+        "temperatureControlMode": { "$ref": "#/definitions/temperatureModes" },
+        "temperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        },
+        "exponent": {
+          "type": "number"
+        },
+        "endValueMargin": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureDiff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "deltaJacketReactorParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersDelta"
+        },
+        "endJacketTemperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "tjTrDelta": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureDiff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "temperatureControlParametersByExpression": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersByExpression"
+        },
+        "temperatureControlMode": { "$ref": "#/definitions/temperatureModes" },
+        "temperatureExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "minimumTemperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "maximumTemperature": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperature"
+        },
+        "endConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "temperatureControlParametersOff": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "TemperatureControlParametersOff"
+        }
+      },
+      "additionalProperties": false
+    },
+    "temperatureModes": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [ "Jacket", "Reactor" ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

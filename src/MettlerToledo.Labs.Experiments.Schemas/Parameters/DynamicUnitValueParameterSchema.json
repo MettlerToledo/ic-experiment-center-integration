@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/dynamicUnitValueParameter",
+  "type": "object",
+
+  "$ref": "/schemas/experiments/parameters/dynamicParameter",
+  "properties": {
+    "$type": {
+      "const": "UnitValue"
+    },
+    "design": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/unitValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "actual": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/unitValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

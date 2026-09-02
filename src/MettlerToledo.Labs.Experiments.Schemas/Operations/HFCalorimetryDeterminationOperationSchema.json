@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/hfCalorimetryDeterminationOperation",
+  "title": "Defines the data for a heat flow calorimetry determination operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "HFCalorimetryDeterminationOperation"
+    },
+    "parameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/standardParameters" },
+        { "$ref": "#/definitions/quickParameters" }
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "definitions": {
+    "commonParameters": {
+      "type": "object",
+      "properties": {
+        "waitingTime": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        },
+        "powerLevel": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [ "RecommendedPower", "FiftyPercentPower", "TwentyFivePercentPower" ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "standardParameters": {
+      "type": "object",
+      "$ref": "#/definitions/commonParameters",
+      "properties": {
+        "$type": {
+          "const": "HFCalorimetryDeterminationParametersStandard"
+        },
+        "determinationSequence": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [ "U", "Cpr", "UAndCpr", "CprAndU", "UAndCprAndU" ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deltaTr": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/temperatureDiff"
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "quickParameters": {
+      "type": "object",
+      "$ref": "#/definitions/commonParameters",
+      "properties": {
+        "$type": {
+          "const": "HFCalorimetryDeterminationParametersQuick"
+        },
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

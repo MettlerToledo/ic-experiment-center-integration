@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/dynamicParameter",
+  "type": "object",
+
+  "properties": {
+    "displayName": { "type": [ "string", "null" ] },
+    "internalName": { "type": "string", "minLength": 1 }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/instrumentZone",
+  "title": "Defines the data for a zone of an instrument used in an experiment",
+
+  "type": "object",
+
+  "properties": {
+    "occupations": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/equipment/occpuation"
+      }
+    },
+    "peripherals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/equipment/peripheral" }
+        ]
+      }
+    }
+  }
+}

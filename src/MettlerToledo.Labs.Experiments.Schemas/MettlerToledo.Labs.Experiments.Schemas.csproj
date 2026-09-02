@@ -1,0 +1,151 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>11.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExperimentSchema.json">
+      <LogicalName>ExperimentSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials\MaterialPortionReferenceSchema.json">
+      <LogicalName>MaterialPortionReferenceSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationGroupSchema.json">
+      <LogicalName>OperationGroupSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationSequenceSchema.json">
+      <LogicalName>OperationSequenceSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\EquipmentSchema.json">
+      <LogicalName>EquipmentSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\EquipmentInstanceSchema.json">
+      <LogicalName>EquipmentInstanceSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\InstrumentSchema.json">
+      <LogicalName>InstrumentSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\PeripheralSchema.json">
+      <LogicalName>PeripheralSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\AlrSchema.json">
+      <LogicalName>AlrSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\EquipmentReferenceSchema.json">
+      <LogicalName>EquipmentReferenceSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\PathPartSchema.json">
+      <LogicalName>PathPartSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\InstrumentZoneSchema.json">
+      <LogicalName>InstrumentZoneSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\AlrInstrumentZoneSchema.json">
+      <LogicalName>AlrInstrumentZoneSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\ReceptacleConfigurationSchema.json">
+      <LogicalName>ReceptacleConfigurationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\InsertReferenceSchema.json">
+      <LogicalName>InsertReferenceSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\OccupationSchema.json">
+      <LogicalName>OccupationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials\MaterialPortionSchema.json">
+      <LogicalName>MaterialPortionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\RTCalorimetryDeterminationOperationSchema.json">
+      <LogicalName>RTCalorimetryDeterminationOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\HFCalorimetryDeterminationOperationSchema.json">
+      <LogicalName>HFCalorimetryDeterminationOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ResetQrtcIntegralOperationSchema.json">
+      <LogicalName>ResetQrtcIntegralOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\RecordVirtualVolumeOperationSchema.json">
+      <LogicalName>RecordVirtualVolumeOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\DynamicMaterialReferenceParameterSchema.json">
+      <LogicalName>DynamicMaterialReferenceParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\DynamicParameterSchema.json">
+      <LogicalName>DynamicParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\DynamicBooleanParameterSchema.json">
+      <LogicalName>DynamicBooleanParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\DynamicStringParameterSchema.json">
+      <LogicalName>DynamicStringParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\DynamicUnitValueParameterSchema.json">
+      <LogicalName>DynamicUnitValueParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samples\SampleSchema.json">
+      <LogicalName>SampleSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ControlFinalControlElementOperationSchema.json">
+      <LogicalName>ControlFinalControlElementOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ReleaseOperationSchema.json">
+      <LogicalName>ReleaseOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\OperationSchema.json">
+      <LogicalName>OperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\AgitateOperationSchema.json">
+      <LogicalName>AgitateOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\TemperatureControlOperationSchema.json">
+      <LogicalName>TemperatureControlOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ChargeOperationSchema.json">
+      <LogicalName>ChargeOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\SampleOperationSchema.json">
+      <LogicalName>SampleOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ObservationOperationSchema.json">
+      <LogicalName>ObservationOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\TimeMarkerOperationSchema.json">
+      <LogicalName>TimeMarkerOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ControlPhOperationSchema.json">
+      <LogicalName>ControlPhOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\ControlBalanceOperationSchema.json">
+      <LogicalName>ControlBalanceOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\DynamicOperationSchema.json">
+      <LogicalName>DynamicOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operations\WaitOperationSchema.json">
+      <LogicalName>WaitOperationSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parameters\UnitValueParameterSchema.json">
+      <LogicalName>UnitValueParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessSchema.json">
+      <LogicalName>ProcessSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StageSchema.json">
+      <LogicalName>StageSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StageWithMaterialsSchema.json">
+      <LogicalName>StageWithMaterialsSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrackingIdSchema.json">
+      <LogicalName>TrackingIdSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitValueSchema.json">
+      <LogicalName>UnitValueSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendSchema.json">
+      <LogicalName>TrendSchema.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

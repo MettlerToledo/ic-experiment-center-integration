@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/alrInstrumentZone",
+  "title": "Defines the data for a zone of an alr instrument used in an experiment",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/equipment/instrumentZone",
+
+  "properties": {
+    "$type": {
+      "const": "AlrInstrumentZone"
+    },
+    "receptacle": {
+      "$ref": "/schemas/experiments/equipment/receptacleConfiguration"
+    }
+  },
+  "required": [ "receptacle" ],
+  "unevaluatedProperties": false
+}

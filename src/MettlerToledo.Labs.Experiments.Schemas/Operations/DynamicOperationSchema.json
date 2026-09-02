@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/dynamicOperation",
+  "title": "Defines the data for a dynamic operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "DynamicOperation"
+    },
+    "operationType": {
+      "type": "string",
+      "enum": [
+        "Centrifuge",
+        "Chromatography",
+        "Concentrate",
+        "Discharge",
+        "Dry",
+        "Filter",
+        "Homogenize",
+        "Hydrocyclone",
+        "Inert",
+        "Mill",
+        "PackAndLabel",
+        "PressureAdjust",
+        "Recirculate",
+        "Rinse",
+        "Separate",
+        "Sieve",
+        "Transfer",
+        "Wash",
+        "WetMill",
+        "ControlPH",
+        "Charge",
+        "TemperatureControl",
+        "Settle",
+        "Agitate",
+        "TakeSample",
+        "TakePicture",
+        "Wait",
+        "QuickCalDetermination",
+        "RecordVirtualVolume",
+        "ResetIntegralQrRtc",
+        "RTCalDetermination",
+        "HfCalDetermination"
+      ]
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/parameters/dynamicUnitValueParameter" },
+          { "$ref": "/schemas/experiments/parameters/dynamicStringParameter" },
+          { "$ref": "/schemas/experiments/parameters/dynamicBooleanParameter" },
+          { "$ref": "/schemas/experiments/parameters/dynamicMaterialReferenceParameter" }
+        ]
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

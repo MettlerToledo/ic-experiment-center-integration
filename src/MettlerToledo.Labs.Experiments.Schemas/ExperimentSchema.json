@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/experiment",
+  "title": "Experiment Schema",
+  "description": "The information about an iC Experiment Center Experiment",
+  "type": "object",
+
+  "properties": {
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "schemaVersion": {
+      "type": "string"
+    },
+    "trackingId": {
+      "$ref": "/schemas/experiments/trackingId"
+    },
+    "uniqueElnId": {
+      "$ref": "#/definitions/commonName"
+    },
+    "name": {
+      "$ref": "#/definitions/commonName"
+    },
+    "suffix": {
+      "type": "string"
+    },
+    "user": {
+      "type": "string"
+    },
+    "project": {
+      "$ref": "#/definitions/commonName"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "experimentStatus": {
+      "type": "string",
+      "enum": [ "Planning", "InProgress", "Concluded" ]
+    },
+    "validityStatus": {
+      "type": "string",
+      "enum": [ "Invalid", "Valid" ]
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/materials/materialPortion"
+      }
+    },
+    "process": {
+      "$ref": "/schemas/experiments/process"
+    },
+    "equipmentCollection": {
+      "type": "array"
+    },
+    "customMetadata": {
+      "type": [ "object", "null" ]
+    }
+  },
+  "required": [ "schemaVersion" ],
+  "additionalProperties": false,
+  "definitions": {
+    "commonName": {
+      "type": "string",
+      "maxLength": 50
+    }
+  }
+}

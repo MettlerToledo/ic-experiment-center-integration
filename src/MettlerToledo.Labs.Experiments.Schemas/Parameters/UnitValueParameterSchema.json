@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/unitValueParameter",
+  "type": "object",
+
+  "properties": {
+    "design": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/unitValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "actual": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/unitValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "rotationalFrequency": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/rotationalFrequency"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/rotationalFrequency"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "temperature": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperature"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperature"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "temperatureDiff": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperatureDiff"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperatureDiff"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "temperatureRate": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperatureRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/temperatureRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "time": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "chemicalAmount": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/chemicalAmount"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/chemicalAmount"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "chemicalAmountRate": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/chemicalAmountRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/chemicalAmountRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "ph": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/ph"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/ph"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "phRate": {
+      "properties": {
+        "design": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/phRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "actual": {
+          "anyOf": [
+            {
+              "$ref": "/schemas/experiments/unitValue#/definitions/phRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

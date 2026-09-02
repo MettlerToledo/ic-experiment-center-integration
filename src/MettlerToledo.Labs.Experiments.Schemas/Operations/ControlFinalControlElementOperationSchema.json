@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/controlFinalControlElementOperation",
+  "title": "Defines the data for a control final control element operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "ControlFinalControlElementOperation"
+    },
+    "parameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/controlFinalControlElementOnParameters" },
+        { "$ref": "#/definitions/controlFinalControlElementOnDurationParameters" },
+        { "$ref": "#/definitions/controlFinalControlElementRampByDurationParameters" },
+        { "$ref": "#/definitions/controlFinalControlElementByExpressionParameters" },
+        { "$ref": "#/definitions/controlFinalControlElementOffParameters" }
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "definitions": {
+    "controlFinalControlElementOnParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ControlFinalControlElementOnParameters"
+        },
+        "value": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter"
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlFinalControlElementOnDurationParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ControlFinalControlElementOnDurationParameters"
+        },
+        "value": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlFinalControlElementRampByDurationParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ControlFinalControlElementRampByDurationParameters"
+        },
+        "endValue": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlFinalControlElementByExpressionParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ControlFinalControlElementByExpressionParameters"
+        },
+        "controlExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "endConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlFinalControlElementOffParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ControlFinalControlElementOffParameters"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

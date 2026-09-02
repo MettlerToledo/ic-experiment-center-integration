@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/samples/sample",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timeUtc": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

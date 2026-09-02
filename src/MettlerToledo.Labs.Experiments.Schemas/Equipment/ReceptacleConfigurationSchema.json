@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/receptacleConfiguration",
+  "title": "Defines a recpetacle configuration",
+
+  "type": "object",
+
+  "properties": {
+    "receptacleName": {
+      "type": "string",
+      "description": "The name of the receptacle type."
+    },
+    "reactorVesselNames": {
+      "type": "array",
+      "description": "The names of the reactor vessel types being used in this receptacle.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inserts": {
+      "type": "array",
+      "description": "Information about the inserts in the vessels.",
+      "items": {
+        "$ref": "/schemas/experiments/equipment/insertReference"
+      }
+    }
+  },
+
+  "additionalProperties": false
+}

@@ -1,0 +1,21 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/insertReference",
+  "title": "A reference to insert type used in an experiment",
+
+  "type": "object",
+
+  "properties": {
+    "insertType": {
+      "type": "string",
+      "enum": [ "Stirrer", "Baffle", "CalibrationHeater", "Fbrm", "IrProbe", "Pvm", "PhProbe", "TrSensor", "TurbiditySensor" ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "partOrderNumber": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
