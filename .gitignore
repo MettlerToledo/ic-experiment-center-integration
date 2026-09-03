@@ -89,9 +89,6 @@ CodeCoverage/
 .env.local
 *.local
 
-# IDE specific files
-.editorconfig
-
 # OS files
 .DS_Store
 Thumbs.db

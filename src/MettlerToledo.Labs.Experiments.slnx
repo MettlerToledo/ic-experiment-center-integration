@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
   <Project Path="MettlerToledo.Labs.Experiments.Clients/MettlerToledo.Labs.Experiments.Clients.csproj" Id="6624f7cf-148c-47f3-811d-665496977990" />
   <Project Path="MettlerToledo.Labs.Experiments.Schemas/MettlerToledo.Labs.Experiments.Schemas.csproj" Id="b35f20f8-b5c1-4726-8fc7-0285e8f08657" />
   <Project Path="MettlerToledo.Labs.Experiments.UnitTests/MettlerToledo.Labs.Experiments.UnitTests.csproj" Id="508fe072-e77d-4988-bc12-6bb780e52da7" />
