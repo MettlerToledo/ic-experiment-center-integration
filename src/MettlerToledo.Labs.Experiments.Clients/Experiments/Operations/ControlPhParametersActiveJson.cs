@@ -1,9 +1,9 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
+using AutoChem.Lab.S88Definitions.Materials;
+using AutoChem.Lab.S88Definitions.Parameters;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+namespace AutoChem.Lab.S88Definitions.Operations;
 
 /// <summary>
 /// Defines the parameters for the <see cref="ControlPhOperationJson"/>

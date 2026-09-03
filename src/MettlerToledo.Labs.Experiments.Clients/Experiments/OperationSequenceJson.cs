@@ -1,10 +1,10 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+using AutoChem.Lab.S88Definitions.Operations;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
+namespace AutoChem.Lab.S88Definitions;
 
 /// <summary>
 /// A sequence of operations.

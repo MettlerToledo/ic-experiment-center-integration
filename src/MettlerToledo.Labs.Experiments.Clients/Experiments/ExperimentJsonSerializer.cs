@@ -1,4 +1,4 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -8,10 +8,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using System.Threading.Tasks;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
+using AutoChem.Lab.S88Definitions.Equipments;
+using AutoChem.Lab.S88Definitions.Trends;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
+namespace AutoChem.Lab.S88Definitions;
 
 /// <summary>
 /// A class to help with serializing the <see cref="ExperimentJson"/> and trend values.

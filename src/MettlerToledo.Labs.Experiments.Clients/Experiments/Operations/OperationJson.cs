@@ -1,12 +1,11 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using MettlerToledo.Labs.Experiments.Clients.Experiments;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
+using AutoChem.Lab.S88Definitions.Equipments;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+namespace AutoChem.Lab.S88Definitions.Operations;
 
 /// <summary>
 /// The base properties of an operation.

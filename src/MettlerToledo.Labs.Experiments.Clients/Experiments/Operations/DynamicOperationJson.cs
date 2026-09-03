@@ -1,9 +1,9 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System.Collections.Generic;
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
+using AutoChem.Lab.S88Definitions.Parameters;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+namespace AutoChem.Lab.S88Definitions.Operations;
 
 /// <summary>
 /// A user definable operation that can be used for manual operations or user defined operations for controling

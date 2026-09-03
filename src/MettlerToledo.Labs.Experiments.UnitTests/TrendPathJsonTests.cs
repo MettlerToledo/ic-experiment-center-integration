@@ -1,4 +1,6 @@
-﻿using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 using Shouldly;
 using Xunit;
 

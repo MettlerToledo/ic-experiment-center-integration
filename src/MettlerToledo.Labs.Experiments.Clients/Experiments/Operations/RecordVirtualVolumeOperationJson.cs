@@ -1,8 +1,8 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using MettlerToledo.Labs.Experiments.Clients.Experiments.Units;
+using AutoChem.Lab.S88Definitions.Units;
 
-namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+namespace AutoChem.Lab.S88Definitions.Operations;
 
 /// <summary>
 /// An operation to record a virtual volume.
