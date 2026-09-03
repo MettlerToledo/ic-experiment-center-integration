@@ -1,9 +1,9 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Parameters;
-using AutoChem.Lab.S88Definitions.Units;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Units;
 
-namespace AutoChem.Lab.S88Definitions.Materials;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
 /// <summary>
 /// Information about a material (e.g. chemical, substance, mixture)

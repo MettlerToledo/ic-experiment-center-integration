@@ -1,6 +1,6 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// Switches off the final control element.

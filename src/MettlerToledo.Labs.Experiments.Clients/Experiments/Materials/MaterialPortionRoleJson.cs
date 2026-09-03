@@ -1,6 +1,6 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions.Materials;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
 /// <summary>
 /// Defines roles of a material.

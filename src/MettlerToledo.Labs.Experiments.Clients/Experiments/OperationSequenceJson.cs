@@ -2,9 +2,9 @@
 
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using AutoChem.Lab.S88Definitions.Operations;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// A sequence of operations.

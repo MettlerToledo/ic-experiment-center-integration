@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AutoChem.Lab.S88Definitions.Materials;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
 /// <summary>
 /// A reference to a material portion.

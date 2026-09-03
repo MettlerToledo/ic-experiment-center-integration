@@ -1,8 +1,8 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Parameters;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// Parameters for a charge operation that uses an expression to determine the rate at which to charge the material portion while

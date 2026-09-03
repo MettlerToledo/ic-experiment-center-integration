@@ -1,7 +1,6 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System.Text.Json.Serialization;
-using MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 

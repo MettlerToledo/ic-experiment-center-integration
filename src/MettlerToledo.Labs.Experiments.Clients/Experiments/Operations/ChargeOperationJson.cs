@@ -1,8 +1,8 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Materials;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// An operation to charge material into a vessel.

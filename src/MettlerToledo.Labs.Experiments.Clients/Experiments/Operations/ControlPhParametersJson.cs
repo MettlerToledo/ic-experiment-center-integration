@@ -2,7 +2,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// Defines the parameters for the <see cref="ControlPhOperationJson"/>
