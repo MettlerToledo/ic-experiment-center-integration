@@ -1,8 +1,8 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Units;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Units;
 
-namespace AutoChem.Lab.S88Definitions.Parameters;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
 
 /// <summary>
 /// A dynamic unit value parameter.

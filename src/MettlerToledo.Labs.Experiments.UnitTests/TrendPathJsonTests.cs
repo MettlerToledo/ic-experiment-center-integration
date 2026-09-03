@@ -1,8 +1,10 @@
-using AutoChem.Lab.S88Definitions.Trends;
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 using Shouldly;
 using Xunit;
 
-namespace AutoChem.Lab.S88Definitions.UnitTests;
+namespace MettlerToledo.Labs.Experiments.UnitTests;
 
 public class TrendPathJsonTests
 {

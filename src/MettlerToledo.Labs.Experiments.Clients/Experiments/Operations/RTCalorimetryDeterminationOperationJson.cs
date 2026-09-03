@@ -1,6 +1,6 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// An operation to perform Real time calorimetry determination in which the heat capacity (Cp) is measured.

@@ -1,11 +1,11 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace AutoChem.Lab.S88Definitions.Trends;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 /// <summary>
 /// A converter for <see cref="TrendJson"/> that skip reading the trend values.

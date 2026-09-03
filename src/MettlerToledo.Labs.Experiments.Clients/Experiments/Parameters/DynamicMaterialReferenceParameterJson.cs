@@ -1,8 +1,8 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
-using AutoChem.Lab.S88Definitions.Materials;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
-namespace AutoChem.Lab.S88Definitions.Parameters;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Parameters;
 
 /// <summary>
 /// Represents a parameter that references a material used or produced in a dynamic operation.

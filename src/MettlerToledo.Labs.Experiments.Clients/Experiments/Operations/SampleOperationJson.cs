@@ -1,9 +1,9 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System.Collections.Generic;
-using AutoChem.Lab.S88Definitions.Samples;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Samples;
 
-namespace AutoChem.Lab.S88Definitions.Operations;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
 
 /// <summary>
 /// An operation for taking a sample

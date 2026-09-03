@@ -1,12 +1,12 @@
-﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-using AutoChem.Lab.S88Definitions.Materials;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Materials;
 
-namespace AutoChem.Lab.S88Definitions;
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments;
 
 /// <summary>
 /// Object, that when serialized to Json conforms to the experiment schema
