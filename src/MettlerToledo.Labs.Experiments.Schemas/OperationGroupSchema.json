@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operationGroup",
+  "title": "Defines the data of an operation group",
+
+  "type": "object",
+
+  "properties": {
+    "operationSequences": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/operationSequence"
+      }
+    }
+  },
+  "additionalProperties": false
+}

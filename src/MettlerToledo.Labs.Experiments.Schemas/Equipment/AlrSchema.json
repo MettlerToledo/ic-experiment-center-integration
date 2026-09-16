@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/alr",
+  "title": "Defines the data for an alr used in an experiment",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/equipment/instrument",
+
+  "properties": {
+    "$type": {
+      "const": "Alr"
+    }
+  },
+  "unevaluatedProperties": false
+}

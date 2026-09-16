@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/chargeOperation",
+  "title": "Defines the data for a charge operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "ChargeOperation"
+    },
+    "material": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/materials/materialPortionReference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/chargeByDurationParameters" },
+        { "$ref": "#/definitions/chargeByRateParameters" },
+        { "$ref": "#/definitions/chargeByAmountExpressionParameters" },
+        { "$ref": "#/definitions/chargeByRateExpressionParameters"}
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "definitions": {
+    "chargeByDurationParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ChargeByDurationParameters"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "chargeByRateParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ChargeByRateParameters"
+        },
+        "rate": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/chemicalAmountRate"
+        }
+      },
+      "additionalProperties": false
+    },
+    "chargeByAmountExpressionParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ChargeByAmountExpressionParameters"
+        },
+        "amountExpression": {
+          "type": "string"
+        },
+        "suspendConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "endConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maximumAmount": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/chemicalAmount"
+        },
+        "chargeEndedByMaxAmountResponse": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [ "ContinueProcedure", "PauseProcedure" ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "chargeByRateExpressionParameters": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "ChargeByRateExpressionParameters"
+        },
+        "rateExpression": {
+          "type": "string"
+        },
+        "suspendConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "endConditionExpression": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maximumAmount": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/chemicalAmount"
+        },
+        "chargeEndedByMaxAmountResponse": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": [ "ContinueProcedure", "PauseProcedure" ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "maximumRate": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/chemicalAmountRate"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
+

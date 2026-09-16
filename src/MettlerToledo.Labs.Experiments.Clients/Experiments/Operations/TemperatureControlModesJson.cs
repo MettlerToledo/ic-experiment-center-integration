@@ -1,0 +1,19 @@
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+
+namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Operations;
+
+/// <summary>
+/// The types of temperature control operations.
+/// </summary>
+public enum TemperatureControlModesJson
+{
+    /// <summary>
+    /// Jacket type of temperature operation
+    /// </summary>
+    Jacket = 0,
+
+    /// <summary>
+    /// Reactor type of temperature operation
+    /// </summary>
+    Reactor = 1
+}

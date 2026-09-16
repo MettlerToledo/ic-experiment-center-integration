@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/equipmentReference",
+  "title": "A reference to equipment used in an experiment",
+
+  "type": "object",
+
+  "properties": {
+    "trackingId": {
+      "$ref": "/schemas/experiments/trackingId"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/pathPart",
+  "title": "Describes a part of a path, which defines the connection of a peripheral to an instrument",
+
+  "type": "object",
+
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the path part, e.g. 'Ecb', 'ControlPort', 'SensorPort', 'DosingUnit'"
+    },
+    "index": {
+      "type": "integer",
+      "description": "The index of the path part, e.g. the index of the control port or sensor port."
+    }
+  },
+  "additionalProperties": false
+}

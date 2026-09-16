@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/dynamicStringParameter",
+  "type": "object",
+
+  "$ref": "/schemas/experiments/parameters/dynamicParameter",
+  "properties": {
+    "$type": {
+      "const": "String"
+    },
+    "stringValue": { "type": [ "string", "null" ] }
+  }
+}

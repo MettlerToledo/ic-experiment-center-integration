@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/stage",
+  "title": "Defines the data of a stage",
+
+  "type": "object",
+
+  "properties": {
+    "id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "trackingId": {
+      "$ref": "/schemas/experiments/trackingId"
+    },
+    "stageType": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "CrystallizationStage",
+        "DecompositionStage",
+        "DistillationOfProductStage",
+        "DryingStage",
+        "DryingOfSolutionStage",
+        "EquipmentConditioningStage",
+        "EquipmentPreparationStage",
+        "ExtractionStage",
+        "FiltrationStage",
+        "HomogenizationStage",
+        "IsolationOfSolidStage",
+        "MixturePreparationStage",
+        "ParticleSizeReductionStage",
+        "ReactionStage",
+        "SolventRemovalStage",
+        "SolventSwitchStage",
+        "TransferStage",
+        "WashingStage",
+        "WasteTreatmentStage"
+      ]
+    },
+    "startTimeUtc": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "completionTimeUtc": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "operationGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/operationGroup"
+      }
+    },
+    "equipmentCollection": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/equipment/alr" }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

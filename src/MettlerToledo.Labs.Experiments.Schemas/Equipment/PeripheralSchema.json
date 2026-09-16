@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/peripheral",
+  "title": "Identifies and describes a peripheral used in an experiment",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/equipment/equipment",
+
+  "properties": {
+    "identifier": {
+      "type": "string",
+      "description": "An identifier for the peripheral in the context of the instrument it is attached to"
+    },
+    "path": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/equipment/pathPart"
+      },
+      "description": "The path to the peripheral from the perspective of the instrument it is attached to."
+    },
+    "assignedName": {
+      "type": "string",
+      "description": "The name assigned to the peripheral by the user"
+    },
+    "signalType": {
+      "type": "string",
+      "description": "The type of signal the peripheral uses to communicate with the instrument"
+    },
+    "unit": {
+      "type": "string",
+      "description": "The primary unit associated with the peripheral from an experiment / operational view, if any."
+    },
+    "material": {
+      "anyOf": [
+        {
+          "$ref": "/schemas/experiments/materials/materialPortionReference"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "unevaluatedProperties": false
+}

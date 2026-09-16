@@ -25,12 +25,12 @@ How to build, run, and test locally.
 
 ## Contributing
 
-How to submit a pull request. All commits require [DCO sign-off](link-to-dco-explanation) — no CLA required. See [CODE_OF_CONDUCT.md](link) before opening an issue or PR.
+How to submit a pull request. All commits require [DCO sign-off](link-to-dco-explanation) — no CLA required. See [CODE_OF_CONDUCT.md](https://github.com/MettlerToledo/.github/blob/main/CODE_OF_CONDUCT.md) before opening an issue or PR.
 
 ## Security
 
-To report a security vulnerability, do not open a public issue — see [SECURITY.md](link) for the disclosure process and contact.
+To report a security vulnerability, do not open a public issue — see [SECURITY.md](https://github.com/MettlerToledo/.github/blob/main/SECURITY.md) for the disclosure process and contact.
 
 ## License
 
-Licensed under [MIT] — see [LICENSE](link) for details.
+Licensed under [MIT] — see [LICENSE](LICENSE) for details.

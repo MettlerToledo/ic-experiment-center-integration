@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/equipment/equipmentInstance",
+  "title": "Defines the data for equipment instance used in an experiment",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/equipment/equipment",
+
+  "properties": {
+    "assetTag": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [ "model" ]
+}

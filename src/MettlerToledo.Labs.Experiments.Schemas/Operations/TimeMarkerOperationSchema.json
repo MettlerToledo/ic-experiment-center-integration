@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/timeMarkerOperation",
+  "title": "Defines the data for a time marker operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "TimeMarkerOperation"
+    },
+    "name": {
+      "type": "string"
+    },
+    "markedTime": {
+      "type": [ "string", "null" ],
+      "format": "date-time"
+    }
+  },
+  "unevaluatedProperties": false
+}

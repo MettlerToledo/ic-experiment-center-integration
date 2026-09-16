@@ -1,0 +1,61 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operations/waitOperation",
+  "title": "Defines the data for a wait operation",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/operations/operation",
+  "properties": {
+    "$type": {
+      "const": "WaitOperation"
+    },
+    "parameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/waitParametersByDuration" },
+        { "$ref": "#/definitions/waitParametersByEndCondition" },
+        { "$ref": "#/definitions/waitParametersByExpression" }
+      ]
+    }
+  },
+  "unevaluatedProperties": false,
+  "definitions": {
+    "waitParametersByDuration": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "WaitParametersByDuration"
+        },
+        "duration": {
+          "$ref": "/schemas/experiments/parameters/unitValueParameter#/definitions/time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "waitParametersByEndCondition": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "WaitParametersByEndCondition"
+        },
+        "endCondition": {
+          "type": [ "string", "null" ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "waitParametersByExpression": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "const": "WaitParametersByExpression"
+        },
+        "expression": {
+          "type": [ "string", "null" ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

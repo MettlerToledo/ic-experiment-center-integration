@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operationSequence",
+  "title": "Defines the data of an operation sequence",
+
+  "type": "object",
+
+  "properties": {
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/operations/agitateOperation" },
+          { "$ref": "/schemas/experiments/operations/temperatureControlOperation" },
+          { "$ref": "/schemas/experiments/operations/chargeOperation" },
+          { "$ref": "/schemas/experiments/operations/sampleOperation" },
+          { "$ref": "/schemas/experiments/operations/releaseOperation" },
+          { "$ref": "/schemas/experiments/operations/timeMarkerOperation" },
+          { "$ref": "/schemas/experiments/operations/controlPhOperation" },
+          { "$ref": "/schemas/experiments/operations/controlBalanceOperation" },
+          { "$ref": "/schemas/experiments/operations/controlFinalControlElementOperation" },
+          { "$ref": "/schemas/experiments/operations/observationOperation" },
+          { "$ref": "/schemas/experiments/operations/dynamicOperation" },
+          { "$ref": "/schemas/experiments/operations/waitOperation" },
+          { "$ref": "/schemas/experiments/operations/recordVirtualVolumeOperation" },
+          { "$ref": "/schemas/experiments/operations/resetQrtcIntegralOperation" },
+          { "$ref": "/schemas/experiments/operations/hfCalorimetryDeterminationOperation" },
+          { "$ref": "/schemas/experiments/operations/rtCalorimetryDeterminationOperation" }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}
