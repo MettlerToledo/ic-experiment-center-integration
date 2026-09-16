@@ -33,4 +33,4 @@ To report a security vulnerability, do not open a public issue — see [SECURITY
 
 ## License
 
-Licensed under [MIT] — see [LICENSE](link) for details.
+Licensed under [MIT] — see [LICENSE](LICENSE) for details.
