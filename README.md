@@ -23,6 +23,8 @@ Step-by-step setup instructions.
 
 How to build, run, and test locally.
 
+To build the solution directly, run `dotnet build src\MettlerToledo.Labs.Experiments.slnx`
+
 ## Contributing
 
 How to submit a pull request. All commits require [DCO sign-off](link-to-dco-explanation) — no CLA required. See [CODE_OF_CONDUCT.md](https://github.com/MettlerToledo/.github/blob/main/CODE_OF_CONDUCT.md) before opening an issue or PR.
