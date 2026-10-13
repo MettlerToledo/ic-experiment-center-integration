@@ -19,11 +19,11 @@ Links to docs, usage examples, and sample code.
 
 Step-by-step setup instructions.
 
-To build the solution directly, run `dotnet build src\MettlerToledo.Labs.Experiments.slnx`
-
 ## Development
 
 How to build, run, and test locally.
+
+To build the solution directly, run `dotnet build src\MettlerToledo.Labs.Experiments.slnx`
 
 ## Contributing
 
