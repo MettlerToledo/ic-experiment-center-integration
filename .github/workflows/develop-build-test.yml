@@ -28,4 +28,4 @@ jobs:
         run: dotnet run --project src/MettlerToledo.Labs.Experiments.UnitTests/MettlerToledo.Labs.Experiments.UnitTests.csproj --configuration Release --no-build
 
       - name: Package
-        run: dotnet pack src/MettlerToledo.Labs.Experiments.slnx --configuration Release --no-build --output ./artifacts /p:PackageVersion=1.0.${GITHUB_RUN_NUMBER}
+        run: dotnet pack src/MettlerToledo.Labs.Experiments.Packages.slnf --configuration Release --no-build --output ./artifacts /p:PackageVersion=1.0.0-dev-${GITHUB_RUN_NUMBER}

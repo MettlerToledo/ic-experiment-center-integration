@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path="Directory.Packages.props" />
+    <File Path="MettlerToledo.Labs.Experiments.Packages.slnf" />
   </Folder>
   <Project Path="MettlerToledo.Labs.Experiments.Clients/MettlerToledo.Labs.Experiments.Clients.csproj" Id="6624f7cf-148c-47f3-811d-665496977990" />
   <Project Path="MettlerToledo.Labs.Experiments.Converters/MettlerToledo.Labs.Experiments.Converters.csproj" Id="f768e090-b533-4f36-bede-262ba8af310b" />

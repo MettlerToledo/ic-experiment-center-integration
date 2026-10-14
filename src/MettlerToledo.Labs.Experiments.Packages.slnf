@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "path": "MettlerToledo.Labs.Experiments.slnx",
+    "projects": [
+      "MettlerToledo.Labs.Experiments.Schemas\\MettlerToledo.Labs.Experiments.Schemas.csproj",
+      "MettlerToledo.Labs.Experiments.Clients\\MettlerToledo.Labs.Experiments.Clients.csproj",
+      "MettlerToledo.Labs.Experiments.Converters\\MettlerToledo.Labs.Experiments.Converters.csproj"
+    ]
+  }
+}
