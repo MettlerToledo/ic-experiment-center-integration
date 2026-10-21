@@ -31,4 +31,5 @@ jobs:
         run: dotnet pack src/MettlerToledo.Labs.Experiments.Packages.slnf --configuration Release --no-build --output ./artifacts /p:PackageVersion=1.0.0-dev-${GITHUB_RUN_NUMBER}
 
       - name: Publish Package
-        run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.AZURE_DEVOPS_PACKAGE }} --source https://pkgs.dev.azure.com/AutoChem/iC3ng/_packaging/iC3ng/nuget/v3/index.json
+        run: dotnet nuget add source https://pkgs.dev.azure.com/AutoChem/iC3ng/_packaging/iC3ng/nuget/v3/index.json --name azdevops --username AutoChem --password ${{ secrets.AZURE_DEVOPS_PACKAGE }} --store-password-in-clear-text
+      - run: dotnet nuget push ./artifacts/*.nupkg --source azdevops
