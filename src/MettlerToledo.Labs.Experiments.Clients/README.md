@@ -1,0 +1,1 @@
+﻿Clients for the Mettler Toledo Lab Experiments public API and the objects for the json representation of experiment entities.

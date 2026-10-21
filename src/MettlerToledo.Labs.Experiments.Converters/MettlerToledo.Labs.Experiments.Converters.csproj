@@ -4,10 +4,14 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>11.0</LangVersion>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Clients\MettlerToledo.Labs.Experiments.Clients.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>
