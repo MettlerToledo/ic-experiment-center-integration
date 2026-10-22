@@ -35,7 +35,7 @@ jobs:
       - run: dotnet nuget push ./artifacts/*.nupkg --source azdevops --api-key RequiredUnusedKey
   
       - name: Upload NuGet package as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: nuget-packages
           path: ./artifacts/*.nupkg
