@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/operationDefinition",
+  "title": "Defines an operation definition",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/s88Definition",
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": [
+        "ControlPHOperation",
+        "DoseAtRateOperation",
+        "DistillOperation",
+        "EndExperimentOperation",
+        "HeatCoolOperation",
+        "HfCalDeterminationOperation",
+        "AddAtOnceOperation",
+        "OperatorMessageOperation",
+        "PauseOperation",
+        "QuickCalDeterminationOperation",
+        "RecordVirtualVolumeOperation",
+        "RefluxOperation",
+        "ResetIntegralQrRtcOperation",
+        "RTCalDeterminationOperation",
+        "SettleOperation",
+        "StirOperation",
+        "TakeSampleOperation",
+        "WaitOperation",
+        "CentrifugeOperation",
+        "ChromatographyOperation",
+        "ConcentrateOperation",
+        "DischargeOperation",
+        "DryOperation",
+        "FilterOperation",
+        "HomogenizeOperation",
+        "HydrocycloneOperation",
+        "InertOperation",
+        "MillOperation",
+        "PackAndLabelOperation",
+        "PressureAdjustOperation",
+        "RecirculateOperation",
+        "RinseOperation",
+        "SeparateOperation",
+        "SieveOperation",
+        "TransferOperation",
+        "WashOperation",
+        "WetMillOperation"
+      ]
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "anyOf": [
+          { "$ref": "/schemas/experiments/parameters/booleanParameterDefinition" },
+          { "$ref": "/schemas/experiments/parameters/materialParameterDefinition" },
+          { "$ref": "/schemas/experiments/parameters/stringParameterDefinition" },
+          { "$ref": "/schemas/experiments/parameters/unitValueParameterDefinition" }
+        ]
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}
