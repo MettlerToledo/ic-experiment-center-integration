@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/processDefinition",
+  "title": "Defines a process definition",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/s88Definition",
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": [ "None", "Synthesis", "Rework", "Reprocess", "Purification", "ParticleTuning" ]
+    }
+  },
+  "unevaluatedProperties": false
+}
