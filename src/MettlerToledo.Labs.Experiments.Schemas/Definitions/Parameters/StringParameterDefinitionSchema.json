@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/stringParameterDefinition",
+  "title": "Defines a string parameter definition",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/parameters/dynamicParameterDefinition",
+  "properties": {
+    "$type": {
+      "const": "StringParameterDefinition"
+    },
+    "maximumLength": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isMultiline": {
+      "type": "boolean"
+    },
+    "allowedValues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

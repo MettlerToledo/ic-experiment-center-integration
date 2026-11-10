@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/dynamicParameterDefinition",
+  "title": "Defines common properties of a dynamic parameter definition",
+
+  "type": "object",
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

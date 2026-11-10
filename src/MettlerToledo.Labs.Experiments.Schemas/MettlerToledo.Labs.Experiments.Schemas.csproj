@@ -148,9 +148,43 @@
     <EmbeddedResource Include="TrendSchema.json">
       <LogicalName>TrendSchema.json</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\S88DefinitionsSchema.json">
+      <LogicalName>S88DefinitionsSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\S88DefinitionSchema.json">
+      <LogicalName>S88DefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\ProcessDefinitionSchema.json">
+      <LogicalName>ProcessDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\StageDefinitionSchema.json">
+      <LogicalName>StageDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\OperationDefinitionSchema.json">
+      <LogicalName>OperationDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\DynamicParameterDefinitionSchema.json">
+      <LogicalName>DynamicParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\BooleanParameterDefinitionSchema.json">
+      <LogicalName>BooleanParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\MaterialParameterDefinitionSchema.json">
+      <LogicalName>MaterialParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\StringParameterDefinitionSchema.json">
+      <LogicalName>StringParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\UnitValueParameterDefinitionSchema.json">
+      <LogicalName>UnitValueParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Definitions\" />
   </ItemGroup>
 </Project>

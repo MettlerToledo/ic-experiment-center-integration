@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/parameters/materialParameterDefinition",
+  "title": "Defines a material parameter definition",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/parameters/dynamicParameterDefinition",
+  "properties": {
+    "$type": {
+      "const": "MaterialParameterDefinition"
+    },
+    "materialPortionUsage": {
+      "type": "string",
+      "enum": [ "Input", "Output"]
+    }
+  },
+  "unevaluatedProperties": false
+}

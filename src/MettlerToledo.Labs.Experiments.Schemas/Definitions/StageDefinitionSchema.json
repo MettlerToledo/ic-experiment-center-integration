@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/stageDefinition",
+  "title": "Defines a stage definition",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/s88Definition",
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "CrystallizationStage",
+        "DecompositionStage",
+        "DistillationOfProductStage",
+        "DryingStage",
+        "DryingOfSolutionStage",
+        "EquipmentConditioningStage",
+        "EquipmentPreparationStage",
+        "ExtractionStage",
+        "FiltrationStage",
+        "HomogenizationStage",
+        "IsolationOfSolidStage",
+        "MixturePreparationStage",
+        "ParticleSizeReductionStage",
+        "ReactionStage",
+        "SolventRemovalStage",
+        "SolventSwitchStage",
+        "TransferStage",
+        "WashingStage",
+        "WasteTreatmentStage",
+        "ChromatographicSeparationStage"
+      ]
+    }
+  },
+  "unevaluatedProperties": false
+}
