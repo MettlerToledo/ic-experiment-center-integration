@@ -35,3 +35,7 @@ jobs:
         with:
           name: nuget-packages
           path: ./artifacts/*.nupkg
+
+      - name: Publish Package
+        run: dotnet nuget add source ${{ secrets.PACKAGE_PUSH_PATH }} --name azdevops --username AutoChem --password ${{ secrets.PACKAGE_PUSH_KEY }} --store-password-in-clear-text
+      - run: dotnet nuget push ./artifacts/*.nupkg --source azdevops --api-key RequiredUnusedKey
