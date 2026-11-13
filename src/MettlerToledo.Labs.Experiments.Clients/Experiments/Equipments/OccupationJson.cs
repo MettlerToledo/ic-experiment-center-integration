@@ -1,8 +1,9 @@
-﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2025 METTLER TOLEDO. All rights reserved.
 
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using MettlerToledo.Labs.Experiments.Clients.Experiments.Evaluators;
 using MettlerToledo.Labs.Experiments.Clients.Experiments.Trends;
 
 namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
@@ -27,4 +28,9 @@ public class OccupationJson : BaseTypeJson
     /// The trends of the occupation.
     /// </summary>
     public IList<TrendJson> Trends { get; } = new List<TrendJson>();
+
+    /// <summary>
+    /// The evaluators for the occupation.
+    /// </summary>
+    public IList<EvaluatorConfigurationJson> Evaluators { get; } = new List<EvaluatorConfigurationJson>();
 }
