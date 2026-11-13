@@ -1,0 +1,10 @@
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+
+namespace MettlerToledo.Labs.Experiments.Clients.Definitions;
+
+/// <summary>
+/// Defines a type of stage in the system.
+/// </summary>
+public class StageDefinitionJson : S88DefinitionJson
+{
+}
