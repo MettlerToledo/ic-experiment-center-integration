@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/evaluators/trendDefinition",
+  "title": "Defines a trend definition for an evaluator configuration",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/evaluators/trendDefinitionBase",
+
+  "properties": {
+    "$type": {
+      "const": "TrendDefinition"
+    }
+  },
+  "required": ["$type"],
+  "unevaluatedProperties": false
+}

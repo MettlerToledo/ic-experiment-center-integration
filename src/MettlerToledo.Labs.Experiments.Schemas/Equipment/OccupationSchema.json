@@ -36,6 +36,12 @@
       "items": {
         "$ref": "/schemas/experiments/trend"
       }
+    },
+    "evaluators": {
+      "type": "array",
+      "items": {
+        "$ref": "/schemas/experiments/evaluators/evaluatorConfiguration"
+      }
     }
   },
   "additionalProperties": false

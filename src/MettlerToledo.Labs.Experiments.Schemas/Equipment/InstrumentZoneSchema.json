@@ -5,21 +5,13 @@
 
   "type": "object",
 
+  "$ref": "/schemas/experiments/equipment/instrumentZoneBase",
+
   "properties": {
-    "occupations": {
-      "type": "array",
-      "items": {
-        "$ref": "/schemas/experiments/equipment/occpuation"
-      }
-    },
-    "peripherals": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "anyOf": [
-          { "$ref": "/schemas/experiments/equipment/peripheral" }
-        ]
-      }
+    "$type": {
+      "const": "InstrumentZone"
     }
-  }
+  },
+  "required": [ "$type" ],
+  "unevaluatedProperties": false
 }

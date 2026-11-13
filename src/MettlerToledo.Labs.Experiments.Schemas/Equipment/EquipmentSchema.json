@@ -23,7 +23,10 @@
         "CalibrationHeater",
         "FinalControlElement",
         "LiquidPump",
-        "Sensor"
+        "Sensor",
+        "Raman",
+        "Imaging",
+        "ParticleSizeAnalyzer"
       ]
     },
     "model": {

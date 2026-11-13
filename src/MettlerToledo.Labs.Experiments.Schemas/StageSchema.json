@@ -78,7 +78,8 @@
       "items": {
         "type": "object",
         "anyOf": [
-          { "$ref": "/schemas/experiments/equipment/alr" }
+          { "$ref": "/schemas/experiments/equipment/alr" },
+          { "$ref": "/schemas/experiments/equipment/instrument" }
         ]
       }
     }

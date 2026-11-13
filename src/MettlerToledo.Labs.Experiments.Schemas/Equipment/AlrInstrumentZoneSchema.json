@@ -5,7 +5,7 @@
 
   "type": "object",
 
-  "$ref": "/schemas/experiments/equipment/instrumentZone",
+  "$ref": "/schemas/experiments/equipment/instrumentZoneBase",
 
   "properties": {
     "$type": {
@@ -15,6 +15,6 @@
       "$ref": "/schemas/experiments/equipment/receptacleConfiguration"
     }
   },
-  "required": [ "receptacle" ],
+  "required": [ "$type", "receptacle" ],
   "unevaluatedProperties": false
 }
