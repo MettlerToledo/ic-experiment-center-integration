@@ -4,6 +4,8 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>11.0</LangVersion>
     <Nullable>enable</Nullable>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\MettlerToledo.Labs.Experiments.snk</AssemblyOriginatorKeyFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
