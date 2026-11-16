@@ -9,5 +9,6 @@
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
     <PackageVersion Include="xunit.v3" Version="4.0.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
+    <PackageVersion Include="JsonSchema.Net" Version="7.2.3" />
   </ItemGroup>
 </Project>

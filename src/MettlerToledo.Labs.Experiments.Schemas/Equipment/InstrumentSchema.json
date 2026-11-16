@@ -9,14 +9,18 @@
 
   "properties": {
     "softwareVersion": {
-      "type": "string"
+      "anyOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
     },
     "zones": {
       "type": "array",
       "items": {
         "type": "object",
         "anyOf": [
-          { "$ref": "/schemas/experiments/equipment/alrInstrumentZone" }
+          { "$ref": "/schemas/experiments/equipment/alrInstrumentZone" },
+          { "$ref": "/schemas/experiments/equipment/instrumentZone" }
         ]
       }
     }

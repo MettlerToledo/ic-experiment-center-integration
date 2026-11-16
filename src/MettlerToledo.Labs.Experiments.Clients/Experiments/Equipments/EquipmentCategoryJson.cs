@@ -18,7 +18,7 @@ public enum EquipmentCategoryJson
     Balance = 1,
 
     /// <summary>
-    /// RTA IR analyzer device.
+    /// An IR analyzer device.
     /// </summary>
     IR = 2,
 
@@ -66,5 +66,20 @@ public enum EquipmentCategoryJson
     /// <summary>
     /// A device that measures a process variable.
     /// </summary>
-    Sensor = 12
+    Sensor = 12,
+
+    /// <summary>
+    /// A Raman analyzer device.
+    /// </summary>
+    Raman = 13,
+
+    /// <summary>
+    /// A device that measures process variables using imaging.
+    /// </summary>
+    Imaging = 14,
+
+    /// <summary>
+    /// A device that measures the size of particles.
+    /// </summary>
+    ParticleSizeAnalyzer = 15,
 }

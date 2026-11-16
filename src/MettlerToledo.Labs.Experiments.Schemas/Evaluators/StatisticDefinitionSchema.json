@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/evaluators/statisticDefinition",
+  "title": "Defines a statistic definition for an evaluator configuration",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/evaluators/trendDefinitionBase",
+
+  "properties": {
+    "$type": {
+      "const": "StatisticDefinition"
+    },
+    "statisticType": {
+      "type": "string"
+    },
+    "xyDataName": {
+      "type": "string"
+    },
+    "yValueName": {
+      "type": "string"
+    },
+    "rangeStart": {
+      "type": "number"
+    },
+    "rangeEnd": {
+      "type": "number"
+    },
+    "weightingType": {
+      "type": "string"
+    },
+    "isRateOfChange": {
+      "type": "boolean"
+    },
+    "rateOfChangeWindowSize": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "$type"
+  ],
+  "unevaluatedProperties": false
+}

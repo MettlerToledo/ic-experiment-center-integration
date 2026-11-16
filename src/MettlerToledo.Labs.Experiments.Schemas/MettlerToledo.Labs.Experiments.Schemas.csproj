@@ -7,6 +7,57 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Definitions\OperationDefinitionSchema.json">
+      <LogicalName>OperationDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\UnitValueParameterDefinitionSchema.json">
+      <LogicalName>UnitValueParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\StringParameterDefinitionSchema.json">
+      <LogicalName>StringParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\MaterialParameterDefinitionSchema.json">
+      <LogicalName>MaterialParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\DynamicParameterDefinitionSchema.json">
+      <LogicalName>DynamicParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\Parameters\BooleanParameterDefinitionSchema.json">
+      <LogicalName>BooleanParameterDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\S88DefinitionsSchema.json">
+      <LogicalName>S88DefinitionsSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\StageDefinitionSchema.json">
+      <LogicalName>StageDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\S88DefinitionSchema.json">
+      <LogicalName>S88DefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Definitions\ProcessDefinitionSchema.json">
+      <LogicalName>ProcessDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment\InstrumentZoneBaseSchema.json">
+      <LogicalName>InstrumentZoneBaseSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\EvaluatorParameterSchema.json">
+      <LogicalName>EvaluatorParameterSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\StatisticDefinitionSchema.json">
+      <LogicalName>StatisticDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\PeakDefinitionSchema.json">
+      <LogicalName>PeakDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\TrendDefinitionBaseSchema.json">
+      <LogicalName>TrendDefinitionBaseSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\TrendDefinitionSchema.json">
+      <LogicalName>TrendDefinitionSchema.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Evaluators\EvaluatorConfigurationSchema.json">
+      <LogicalName>EvaluatorConfigurationSchema.json</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExperimentSchema.json">
       <LogicalName>ExperimentSchema.json</LogicalName>
     </EmbeddedResource>
@@ -147,36 +198,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TrendSchema.json">
       <LogicalName>TrendSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\S88DefinitionsSchema.json">
-      <LogicalName>S88DefinitionsSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\S88DefinitionSchema.json">
-      <LogicalName>S88DefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\ProcessDefinitionSchema.json">
-      <LogicalName>ProcessDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\StageDefinitionSchema.json">
-      <LogicalName>StageDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\OperationDefinitionSchema.json">
-      <LogicalName>OperationDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\Parameters\DynamicParameterDefinitionSchema.json">
-      <LogicalName>DynamicParameterDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\Parameters\BooleanParameterDefinitionSchema.json">
-      <LogicalName>BooleanParameterDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\Parameters\MaterialParameterDefinitionSchema.json">
-      <LogicalName>MaterialParameterDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\Parameters\StringParameterDefinitionSchema.json">
-      <LogicalName>StringParameterDefinitionSchema.json</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Definitions\Parameters\UnitValueParameterDefinitionSchema.json">
-      <LogicalName>UnitValueParameterDefinitionSchema.json</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -12,5 +12,6 @@
       "enum": [ "None", "Synthesis", "Rework", "Reprocess", "Purification", "ParticleTuning" ]
     }
   },
-  "unevaluatedProperties": false
+  "unevaluatedProperties": false,
+  "required": [ "id" ]
 }

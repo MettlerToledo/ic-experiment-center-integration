@@ -8,6 +8,7 @@ namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 /// Information about equipment used
 /// </summary>
 [JsonDerivedType(typeof(AlrJson), "Alr")]
+[JsonDerivedType(typeof(InstrumentJson), "Instrument")]
 public class EquipmentJson : BaseTypeJson
 {
     /// <summary>

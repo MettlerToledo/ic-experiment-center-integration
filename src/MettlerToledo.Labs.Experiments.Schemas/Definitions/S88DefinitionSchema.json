@@ -13,5 +13,6 @@
     "description": {
       "type": "string"
     }
-  }
+  },
+  "required": [ "displayName" ]
 }

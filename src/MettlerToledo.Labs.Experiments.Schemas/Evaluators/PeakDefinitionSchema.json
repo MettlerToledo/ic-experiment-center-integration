@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://iC3ng.com/schemas/experiments/evaluators/peakDefinition",
+  "title": "Defines a peak definition for an evaluator configuration",
+
+  "type": "object",
+
+  "$ref": "/schemas/experiments/evaluators/trendDefinitionBase",
+
+  "properties": {
+    "$type": {
+      "const": "PeakDefinition"
+    },
+    "profileGroup": {
+      "type": "string",
+      "enum": [
+        "Height",
+        "Area",
+        "Center",
+        "Width",
+        "Region"
+      ]
+    },
+    "profileType": {
+      "type": "string"
+    },
+    "peakStart": {
+      "type": "number"
+    },
+    "peakStop": {
+      "type": "number"
+    },
+    "baselineStart": {
+      "type": "number"
+    },
+    "baselineStop": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "$type"
+  ],
+  "unevaluatedProperties": false
+}

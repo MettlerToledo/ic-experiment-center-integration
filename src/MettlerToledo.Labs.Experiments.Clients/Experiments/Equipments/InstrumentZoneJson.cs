@@ -9,6 +9,7 @@ namespace MettlerToledo.Labs.Experiments.Clients.Experiments.Equipments;
 /// Information about the zone of an instrument.
 /// </summary>
 [JsonDerivedType(typeof(AlrInstrumentZoneJson), "AlrInstrumentZone")]
+[JsonDerivedType(typeof(InstrumentZoneJson), "InstrumentZone")]
 public class InstrumentZoneJson
 {
     /// <summary>
