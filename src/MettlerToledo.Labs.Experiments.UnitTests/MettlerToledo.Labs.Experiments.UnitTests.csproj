@@ -13,10 +13,12 @@
     <PackageReference Include="Shouldly" />
     <PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="JsonSchema.Net" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Clients\MettlerToledo.Labs.Experiments.Clients.csproj" />
+    <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Schemas\MettlerToledo.Labs.Experiments.Schemas.csproj" />
   </ItemGroup>
 
 </Project>
