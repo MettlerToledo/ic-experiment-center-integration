@@ -14,6 +14,9 @@ Links to docs, usage examples, and sample code.
 
 For the initial development phase the packages are available as artifacts of develop builds.
 
+The Clients, Schemas, and Converters assemblies are strong-name signed using the shared key in `src\MettlerToledo.Labs.Experiments.snk`. This key is public and provides assembly identity, not publisher authentication and
+is required for compatibility with other strong-name signed assemblies. The key is not used for security purposes and should not be used to verify the authenticity of the assemblies.
+
 ## Development
 
 How to build, run, and test locally.
