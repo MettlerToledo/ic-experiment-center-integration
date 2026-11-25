@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="System.IO.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Clients\MettlerToledo.Labs.Experiments.Clients.csproj" />
     <ProjectReference Include="..\MettlerToledo.Labs.Experiments.Converters\MettlerToledo.Labs.Experiments.Converters.csproj" />
   </ItemGroup>
 
