@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.ServerSentEvents;
@@ -29,22 +28,21 @@ public sealed class ExperimentsPublicApiClient : IExperimentsPublicApiClient
     }
 
     /// <inheritdoc />
-    public async IAsyncEnumerable<ExperimentStateChangeJson> StreamStateChangesAsync(
+    public async IAsyncEnumerable<ExperimentStateChangeJson> StreamStateChanges(
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         using var request = new HttpRequestMessage(HttpMethod.Get, PublicApiUrlConstants.ExperimentStateChangesPath);
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(PublicApiUrlConstants.EventStreamMediaType));
 
         using var response = await _httpClient
-            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-            .ConfigureAwait(false);
+            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
         response.EnsureSuccessStatusCode();
 
-        using var stream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+        using var stream = await response.Content.ReadAsStreamAsync();
         var parser = SseParser.Create(stream, static (_, data) =>
             JsonSerializer.Deserialize<ExperimentStateChangeJson>(data, ExperimentJsonSerializer.SerializerOptions));
 
-        await foreach (var item in parser.EnumerateAsync(cancellationToken).ConfigureAwait(false))
+        await foreach (var item in parser.EnumerateAsync(cancellationToken))
         {
             if (item.Data is not null)
             {
@@ -54,32 +52,26 @@ public sealed class ExperimentsPublicApiClient : IExperimentsPublicApiClient
     }
 
     /// <inheritdoc />
-    public async Task<DownloadedReport> DownloadReportAsync(
+    public async Task<DownloadedReport> DownloadReport(
         Guid experimentId,
         ReportFileType format,
         CancellationToken cancellationToken = default)
     {
-        var requestUri = string.Format(
-            CultureInfo.InvariantCulture,
-            "{0}/{1}/{2}?{3}={4}",
-            PublicApiUrlConstants.PublicExperimentsPath,
-            experimentId,
-            PublicApiUrlConstants.ReportName,
-            PublicApiUrlConstants.FormatQueryParameterName,
-            format);
+        var requestUri =
+            $"{PublicApiUrlConstants.PublicExperimentsPath}/{experimentId}/{PublicApiUrlConstants.ReportName}" +
+            $"?{PublicApiUrlConstants.FormatQueryParameterName}={format}";
 
         using var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
         var response = await _httpClient
-            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-            .ConfigureAwait(false);
+            .SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
 
         try
         {
             response.EnsureSuccessStatusCode();
 
             var fileName = GetFileName(response, experimentId, format);
-            var content = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            var content = await response.Content.ReadAsStreamAsync();
             return new DownloadedReport(fileName, content, response);
         }
         catch

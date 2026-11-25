@@ -1,5 +1,6 @@
-// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
+using System.IO.Abstractions.TestingHelpers;
 using System.Text;
 using MettlerToledo.Labs.Experiments.Clients.Experiments.PublicApi;
 using MettlerToledo.Labs.Experiments.iCDataCenterConverter.Exporting;
@@ -8,27 +9,28 @@ using Xunit;
 
 namespace MettlerToledo.Labs.Experiments.UnitTests.Exporting;
 
-public class ReportFileWriterTests : IDisposable
+public class ReportFileWriterTests
 {
-    private readonly string _outputDirectory;
+    private const string OutputDirectory = @"C:\exports";
+
+    private readonly MockFileSystem _fileSystem = new();
     private readonly ReportFileWriter _writer;
 
     public ReportFileWriterTests()
     {
-        _outputDirectory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
-        Directory.CreateDirectory(_outputDirectory);
-        _writer = new ReportFileWriter(_outputDirectory);
+        _fileSystem.AddDirectory(OutputDirectory);
+        _writer = new ReportFileWriter(_fileSystem, OutputDirectory);
     }
 
     [Fact]
-    public async Task WriteAsync_ValidFileName_WritesContentToOutputDirectory()
+    public async Task Write_ValidFileName_WritesContentToOutputDirectory()
     {
         var content = Encoding.UTF8.GetBytes("report contents");
 
-        var path = await WriteAsync("My Experiment.pdf", content);
+        var path = await Write("My Experiment.pdf", content);
 
-        path.ShouldBe(Path.Combine(_outputDirectory, "My Experiment.pdf"));
-        (await File.ReadAllBytesAsync(path, TestContext.Current.CancellationToken)).ShouldBe(content);
+        path.ShouldBe(Path.Combine(OutputDirectory, "My Experiment.pdf"));
+        _fileSystem.File.ReadAllBytes(path).ShouldBe(content);
     }
 
     [Theory]
@@ -39,55 +41,47 @@ public class ReportFileWriterTests : IDisposable
     [InlineData("..\\escape.pdf", ".._escape.pdf")]
     [InlineData("../escape.pdf", ".._escape.pdf")]
     [InlineData("..", "_")]
-    public async Task WriteAsync_FileNameWithInvalidCharacters_WritesSanitizedFileInOutputDirectory(
+    public async Task Write_FileNameWithInvalidCharacters_WritesSanitizedFileInOutputDirectory(
         string fileName,
         string expectedFileName)
     {
-        var path = await WriteAsync(fileName, [1]);
+        var path = await Write(fileName, [1]);
 
-        path.ShouldBe(Path.Combine(_outputDirectory, expectedFileName));
-        File.Exists(path).ShouldBeTrue();
+        path.ShouldBe(Path.Combine(OutputDirectory, expectedFileName));
+        _fileSystem.File.Exists(path).ShouldBeTrue();
     }
 
     [Fact]
-    public async Task WriteAsync_FileNameAlreadyExists_AppendsNextFreeNumber()
+    public async Task Write_FileNameAlreadyExists_AppendsNextFreeNumber()
     {
-        await WriteAsync("My Experiment.pdf", [1]);
-        await WriteAsync("My Experiment.pdf", [2]);
+        await Write("My Experiment.pdf", [1]);
+        await Write("My Experiment.pdf", [2]);
 
-        var path = await WriteAsync("My Experiment.pdf", [3]);
+        var path = await Write("My Experiment.pdf", [3]);
 
-        path.ShouldBe(Path.Combine(_outputDirectory, "My Experiment (2).pdf"));
-        (await ReadOutputFileAsync("My Experiment.pdf")).ShouldBe(new byte[] { 1 });
-        (await ReadOutputFileAsync("My Experiment (1).pdf")).ShouldBe(new byte[] { 2 });
-        (await ReadOutputFileAsync("My Experiment (2).pdf")).ShouldBe(new byte[] { 3 });
+        path.ShouldBe(Path.Combine(OutputDirectory, "My Experiment (2).pdf"));
+        ReadOutputFile("My Experiment.pdf").ShouldBe(new byte[] { 1 });
+        ReadOutputFile("My Experiment (1).pdf").ShouldBe(new byte[] { 2 });
+        ReadOutputFile("My Experiment (2).pdf").ShouldBe(new byte[] { 3 });
     }
 
     [Fact]
-    public async Task WriteAsync_Cancelled_DoesNotLeavePartialFile()
+    public async Task Write_Cancelled_DoesNotLeavePartialFile()
     {
         using var report = new DownloadedReport("My Experiment.pdf", new MemoryStream(new byte[] { 1 }));
 
         await Should.ThrowAsync<OperationCanceledException>(() =>
-            _writer.WriteAsync(report, new CancellationToken(canceled: true)));
+            _writer.Write(report, new CancellationToken(canceled: true)));
 
-        Directory.EnumerateFileSystemEntries(_outputDirectory).ShouldBeEmpty();
+        _fileSystem.Directory.EnumerateFileSystemEntries(OutputDirectory).ShouldBeEmpty();
     }
 
-    public void Dispose()
-    {
-        if (Directory.Exists(_outputDirectory))
-        {
-            Directory.Delete(_outputDirectory, recursive: true);
-        }
-    }
-
-    private async Task<string> WriteAsync(string fileName, byte[] content)
+    private async Task<string> Write(string fileName, byte[] content)
     {
         using var report = new DownloadedReport(fileName, new MemoryStream(content));
-        return await _writer.WriteAsync(report, TestContext.Current.CancellationToken);
+        return await _writer.Write(report, TestContext.Current.CancellationToken);
     }
 
-    private Task<byte[]> ReadOutputFileAsync(string fileName) =>
-        File.ReadAllBytesAsync(Path.Combine(_outputDirectory, fileName), TestContext.Current.CancellationToken);
+    private byte[] ReadOutputFile(string fileName) =>
+        _fileSystem.File.ReadAllBytes(Path.Combine(OutputDirectory, fileName));
 }

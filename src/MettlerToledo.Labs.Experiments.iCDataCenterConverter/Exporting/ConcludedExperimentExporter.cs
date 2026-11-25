@@ -35,7 +35,7 @@ public sealed class ConcludedExperimentExporter : IConcludedExperimentExporter
     }
 
     /// <inheritdoc />
-    public async Task RunAsync(ReportFileType fileType, CancellationToken cancellationToken)
+    public async Task Run(ReportFileType fileType, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Watching for concluded experiments. Exporting {FileType}.", fileType);
 
@@ -45,7 +45,7 @@ public sealed class ConcludedExperimentExporter : IConcludedExperimentExporter
             var connectedAt = Stopwatch.GetTimestamp();
             try
             {
-                await ExportConcludedExperimentsAsync(fileType, cancellationToken).ConfigureAwait(false);
+                await ExportConcludedExperiments(fileType, cancellationToken);
                 _logger.LogWarning("The experiment state change stream was closed by the server.");
             }
             catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
@@ -70,7 +70,7 @@ public sealed class ConcludedExperimentExporter : IConcludedExperimentExporter
             _logger.LogInformation("Reconnecting in {ReconnectDelay}.", reconnectDelay);
             try
             {
-                await Task.Delay(reconnectDelay, cancellationToken).ConfigureAwait(false);
+                await Task.Delay(reconnectDelay, cancellationToken);
             }
             catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
             {
@@ -86,26 +86,26 @@ public sealed class ConcludedExperimentExporter : IConcludedExperimentExporter
     private static bool IsAccessDenied(HttpRequestException exception) =>
         exception.StatusCode is HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden;
 
-    private async Task ExportConcludedExperimentsAsync(ReportFileType fileType, CancellationToken cancellationToken)
+    private async Task ExportConcludedExperiments(ReportFileType fileType, CancellationToken cancellationToken)
     {
-        await foreach (var stateChange in _client.StreamStateChangesAsync(cancellationToken).ConfigureAwait(false))
+        await foreach (var stateChange in _client.StreamStateChanges(cancellationToken))
         {
             if (stateChange.State == ExperimentStateJson.Concluded)
             {
-                await ExportReportAsync(stateChange.ExperimentId, fileType, cancellationToken).ConfigureAwait(false);
+                await ExportReport(stateChange.ExperimentId, fileType, cancellationToken);
             }
         }
     }
 
-    private async Task ExportReportAsync(Guid experimentId, ReportFileType fileType, CancellationToken cancellationToken)
+    private async Task ExportReport(Guid experimentId, ReportFileType fileType, CancellationToken cancellationToken)
     {
         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         timeout.CancelAfter(_options.ReportExportTimeout);
 
         try
         {
-            using var report = await _client.DownloadReportAsync(experimentId, fileType, timeout.Token).ConfigureAwait(false);
-            var filePath = await _fileWriter.WriteAsync(report, timeout.Token).ConfigureAwait(false);
+            using var report = await _client.DownloadReport(experimentId, fileType, timeout.Token);
+            var filePath = await _fileWriter.Write(report, timeout.Token);
 
             _logger.LogInformation("Exported concluded experiment {ExperimentId} to {FilePath}.", experimentId, filePath);
         }

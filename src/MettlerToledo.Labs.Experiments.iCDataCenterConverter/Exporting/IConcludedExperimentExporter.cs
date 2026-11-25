@@ -13,5 +13,5 @@ public interface IConcludedExperimentExporter
     /// Monitors the experiment state change stream and exports a report in the given
     /// file type for every experiment that becomes concluded.
     /// </summary>
-    Task RunAsync(ReportFileType fileType, CancellationToken cancellationToken);
+    Task Run(ReportFileType fileType, CancellationToken cancellationToken);
 }

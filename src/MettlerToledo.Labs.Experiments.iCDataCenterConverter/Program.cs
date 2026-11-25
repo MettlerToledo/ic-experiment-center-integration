@@ -46,7 +46,7 @@ public static class Program
         var exporter = host.Services.GetRequiredService<IConcludedExperimentExporter>();
         try
         {
-            await exporter.RunAsync(fileType, cancellation.Token);
+            await exporter.Run(fileType, cancellation.Token);
         }
         catch (HttpRequestException)
         {

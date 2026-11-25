@@ -1,4 +1,4 @@
-// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using System.Net;
 using System.Runtime.ExceptionServices;
@@ -30,118 +30,118 @@ public class ConcludedExperimentExporterTests : IDisposable
     };
 
     [Fact]
-    public async Task RunAsync_ConcludedExperiment_DownloadsAndWritesReport()
+    public async Task Run_ConcludedExperiment_DownloadsAndWritesReport()
     {
         var report = NewReport();
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(StateChanges(StateChange(FirstExperimentId, ExperimentStateJson.Concluded)), StopWatching());
-        _client.DownloadReportAsync(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Returns(report);
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        await _fileWriter.Received(1).WriteAsync(report, Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(report, Arg.Any<CancellationToken>());
     }
 
     [Fact]
-    public async Task RunAsync_NonConcludedEvents_DoesNotExport()
+    public async Task Run_NonConcludedEvents_DoesNotExport()
     {
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(
                 StateChanges(
                     StateChange(FirstExperimentId, ExperimentStateJson.Planning),
                     StateChange(FirstExperimentId, ExperimentStateJson.InProgress)),
                 StopWatching());
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        await _client.DidNotReceive().DownloadReportAsync(Arg.Any<Guid>(), Arg.Any<ReportFileType>(), Arg.Any<CancellationToken>());
-        await _fileWriter.DidNotReceive().WriteAsync(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
+        await _client.DidNotReceive().DownloadReport(Arg.Any<Guid>(), Arg.Any<ReportFileType>(), Arg.Any<CancellationToken>());
+        await _fileWriter.DidNotReceive().Write(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
     }
 
     [Fact]
-    public async Task RunAsync_DownloadFails_LogsAndContinuesWithNextConcludedExperiment()
+    public async Task Run_DownloadFails_LogsAndContinuesWithNextConcludedExperiment()
     {
         var secondReport = NewReport();
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(ConcludedFirstAndSecond(), StopWatching());
-        _client.DownloadReportAsync(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Throws(new HttpRequestException("boom"));
-        _client.DownloadReportAsync(SecondExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(SecondExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Returns(secondReport);
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        await _fileWriter.Received(1).WriteAsync(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
-        await _fileWriter.Received(1).WriteAsync(secondReport, Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(secondReport, Arg.Any<CancellationToken>());
     }
 
     [Fact]
-    public async Task RunAsync_ReportExportTimesOut_LogsAndContinuesWithNextConcludedExperiment()
+    public async Task Run_ReportExportTimesOut_LogsAndContinuesWithNextConcludedExperiment()
     {
         _options.ReportExportTimeout = TimeSpan.FromMilliseconds(50);
         var secondReport = NewReport();
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(ConcludedFirstAndSecond(), StopWatching());
-        _client.DownloadReportAsync(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
-            .Returns(callInfo => NeverCompletesAsync(callInfo.ArgAt<CancellationToken>(2)));
-        _client.DownloadReportAsync(SecondExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+            .Returns(callInfo => NeverCompletes(callInfo.ArgAt<CancellationToken>(2)));
+        _client.DownloadReport(SecondExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Returns(secondReport);
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        await _fileWriter.Received(1).WriteAsync(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
-        await _fileWriter.Received(1).WriteAsync(secondReport, Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(Arg.Any<DownloadedReport>(), Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(secondReport, Arg.Any<CancellationToken>());
     }
 
     [Fact]
-    public async Task RunAsync_StreamClosedByServer_ReconnectsAndKeepsExporting()
+    public async Task Run_StreamClosedByServer_ReconnectsAndKeepsExporting()
     {
         var report = NewReport();
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(
                 StateChanges(),
                 StateChanges(StateChange(FirstExperimentId, ExperimentStateJson.Concluded)),
                 StopWatching());
-        _client.DownloadReportAsync(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Returns(report);
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        _client.Received(3).StreamStateChangesAsync(Arg.Any<CancellationToken>());
-        await _fileWriter.Received(1).WriteAsync(report, Arg.Any<CancellationToken>());
+        _client.Received(3).StreamStateChanges(Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(report, Arg.Any<CancellationToken>());
     }
 
     [Fact]
-    public async Task RunAsync_StreamFails_ReconnectsAndKeepsExporting()
+    public async Task Run_StreamFails_ReconnectsAndKeepsExporting()
     {
         var report = NewReport();
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(
                 Failing(new HttpRequestException("Connection refused.")),
                 StateChanges(StateChange(FirstExperimentId, ExperimentStateJson.Concluded)),
                 StopWatching());
-        _client.DownloadReportAsync(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
+        _client.DownloadReport(FirstExperimentId, ReportFileType.Pdf, Arg.Any<CancellationToken>())
             .Returns(report);
 
-        await RunExporterAsync();
+        await RunExporter();
 
-        _client.Received(3).StreamStateChangesAsync(Arg.Any<CancellationToken>());
-        await _fileWriter.Received(1).WriteAsync(report, Arg.Any<CancellationToken>());
+        _client.Received(3).StreamStateChanges(Arg.Any<CancellationToken>());
+        await _fileWriter.Received(1).Write(report, Arg.Any<CancellationToken>());
     }
 
     [Theory]
     [InlineData(HttpStatusCode.Unauthorized)]
     [InlineData(HttpStatusCode.Forbidden)]
-    public async Task RunAsync_ApiKeyRejected_ThrowsWithoutReconnecting(HttpStatusCode statusCode)
+    public async Task Run_ApiKeyRejected_ThrowsWithoutReconnecting(HttpStatusCode statusCode)
     {
-        _client.StreamStateChangesAsync(Arg.Any<CancellationToken>())
+        _client.StreamStateChanges(Arg.Any<CancellationToken>())
             .Returns(Failing(new HttpRequestException("Rejected.", null, statusCode)));
 
-        var exception = await Should.ThrowAsync<HttpRequestException>(RunExporterAsync);
+        var exception = await Should.ThrowAsync<HttpRequestException>(RunExporter);
 
         exception.StatusCode.ShouldBe(statusCode);
-        _client.Received(1).StreamStateChangesAsync(Arg.Any<CancellationToken>());
+        _client.Received(1).StreamStateChanges(Arg.Any<CancellationToken>());
     }
 
     public void Dispose()
@@ -149,13 +149,13 @@ public class ConcludedExperimentExporterTests : IDisposable
         _cancellation.Dispose();
     }
 
-    private Task RunExporterAsync() =>
+    private Task RunExporter() =>
         new ConcludedExperimentExporter(
                 _client,
                 _fileWriter,
                 Options.Create(_options),
                 NullLogger<ConcludedExperimentExporter>.Instance)
-            .RunAsync(ReportFileType.Pdf, _cancellation.Token);
+            .Run(ReportFileType.Pdf, _cancellation.Token);
 
     private async IAsyncEnumerable<ExperimentStateChangeJson> StopWatching()
     {
@@ -191,7 +191,7 @@ public class ConcludedExperimentExporterTests : IDisposable
         yield break;
     }
 
-    private static async Task<DownloadedReport> NeverCompletesAsync(CancellationToken cancellationToken)
+    private static async Task<DownloadedReport> NeverCompletes(CancellationToken cancellationToken)
     {
         await Task.Delay(Timeout.InfiniteTimeSpan, cancellationToken);
         throw new InvalidOperationException("The delay only ends by cancellation.");

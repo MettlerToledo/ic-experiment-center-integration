@@ -1,5 +1,6 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
+using System.IO.Abstractions;
 using MettlerToledo.Labs.Experiments.Clients.Experiments.PublicApi;
 
 namespace MettlerToledo.Labs.Experiments.iCDataCenterConverter.Exporting;
@@ -15,18 +16,20 @@ public sealed class ReportFileWriter : IReportFileWriter
 
     private static readonly char[] InvalidFileNameCharacters = ['<', '>', ':', '"', '/', '\\', '|', '?', '*'];
 
+    private readonly IFileSystem _fileSystem;
     private readonly string _outputDirectory;
 
     /// <summary>
     /// Initializes a new instance of <see cref="ReportFileWriter"/>.
     /// </summary>
-    public ReportFileWriter(string outputDirectory)
+    public ReportFileWriter(IFileSystem fileSystem, string outputDirectory)
     {
+        _fileSystem = fileSystem;
         _outputDirectory = outputDirectory;
     }
 
     /// <inheritdoc />
-    public async Task<string> WriteAsync(DownloadedReport report, CancellationToken cancellationToken = default)
+    public async Task<string> Write(DownloadedReport report, CancellationToken cancellationToken = default)
     {
         var (fileStream, filePath) = CreateNewFile(SanitizeFileName(report.FileName));
 
@@ -34,12 +37,12 @@ public sealed class ReportFileWriter : IReportFileWriter
         {
             using (fileStream)
             {
-                await report.Content.CopyToAsync(fileStream, cancellationToken).ConfigureAwait(false);
+                await report.Content.CopyToAsync(fileStream, cancellationToken);
             }
         }
         catch
         {
-            File.Delete(filePath);
+            _fileSystem.File.Delete(filePath);
             throw;
         }
 
@@ -58,19 +61,19 @@ public sealed class ReportFileWriter : IReportFileWriter
         return sanitized.Trim('.').Length == 0 ? ReplacementCharacter.ToString() : sanitized;
     }
 
-    private (FileStream Stream, string Path) CreateNewFile(string fileName)
+    private (FileSystemStream Stream, string Path) CreateNewFile(string fileName)
     {
-        var name = Path.GetFileNameWithoutExtension(fileName);
-        var extension = Path.GetExtension(fileName);
+        var name = _fileSystem.Path.GetFileNameWithoutExtension(fileName);
+        var extension = _fileSystem.Path.GetExtension(fileName);
 
         for (var copy = 0; ; copy++)
         {
-            var filePath = Path.Combine(_outputDirectory, copy == 0 ? fileName : $"{name} ({copy}){extension}");
+            var filePath = _fileSystem.Path.Combine(_outputDirectory, copy == 0 ? fileName : $"{name} ({copy}){extension}");
             try
             {
-                return (new FileStream(filePath, FileMode.CreateNew, FileAccess.Write, FileShare.None), filePath);
+                return (_fileSystem.FileStream.New(filePath, FileMode.CreateNew, FileAccess.Write, FileShare.None), filePath);
             }
-            catch (IOException) when (File.Exists(filePath))
+            catch (IOException) when (_fileSystem.File.Exists(filePath))
             {
                 // Name already taken, try the next suffix.
             }

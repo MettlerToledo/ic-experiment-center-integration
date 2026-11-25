@@ -1,5 +1,6 @@
 ﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
+using System.IO.Abstractions;
 using MettlerToledo.Labs.Experiments.Clients.Experiments.PublicApi;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,7 +28,9 @@ public static class ExportServiceCollectionExtensions
         });
 
         services.AddOptions<ConcludedExperimentExportOptions>();
-        services.AddSingleton<IReportFileWriter>(_ => new ReportFileWriter(outputDirectory));
+        services.AddSingleton<IFileSystem, FileSystem>();
+        services.AddSingleton<IReportFileWriter>(serviceProvider =>
+            new ReportFileWriter(serviceProvider.GetRequiredService<IFileSystem>(), outputDirectory));
         services.AddSingleton<IConcludedExperimentExporter, ConcludedExperimentExporter>();
 
         return services;

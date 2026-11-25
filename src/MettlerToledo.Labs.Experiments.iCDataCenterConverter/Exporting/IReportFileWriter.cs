@@ -1,4 +1,4 @@
-// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
+﻿// Copyright © 2025-2026 METTLER TOLEDO. All rights reserved.
 
 using MettlerToledo.Labs.Experiments.Clients.Experiments.PublicApi;
 
@@ -12,5 +12,5 @@ public interface IReportFileWriter
     /// <summary>
     /// Writes the report to storage and returns the full path it was written to.
     /// </summary>
-    Task<string> WriteAsync(DownloadedReport report, CancellationToken cancellationToken = default);
+    Task<string> Write(DownloadedReport report, CancellationToken cancellationToken = default);
 }

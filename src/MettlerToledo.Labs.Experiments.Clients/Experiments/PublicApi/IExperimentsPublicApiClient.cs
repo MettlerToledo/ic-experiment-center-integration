@@ -15,12 +15,12 @@ public interface IExperimentsPublicApiClient
     /// <summary>
     /// Opens the experiment state change events stream.
     /// </summary>
-    IAsyncEnumerable<ExperimentStateChangeJson> StreamStateChangesAsync(CancellationToken cancellationToken = default);
+    IAsyncEnumerable<ExperimentStateChangeJson> StreamStateChanges(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Downloads the experiment report in the requested format.
     /// </summary>
-    Task<DownloadedReport> DownloadReportAsync(
+    Task<DownloadedReport> DownloadReport(
         Guid experimentId,
         ReportFileType format,
         CancellationToken cancellationToken = default);
